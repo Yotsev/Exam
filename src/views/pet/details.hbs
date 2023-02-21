@@ -70,8 +70,6 @@
                         <p class="petName">Name: {{pet.name}}</p>
                         <p class="petAge">Age: {{pet.age}}</p>
                     </div>
-                    {{#if isAuthenticated}}
-                    {{#if isNotOwner}}
                     {{#each pet.comments}}
                     <!-- COMMENTS COMMENTS COMMENTS-->
                     <div class="comments">
@@ -96,6 +94,8 @@
                     {{/each}}
                 </div>
 
+                {{#if isAuthenticated}}
+                {{#if isNotOwner}}
                 <div class="addComments">
                     <!-- Start Add Comments Form -->
                     <form action="/pet/{{pet._id}}/comment" method="POST">
