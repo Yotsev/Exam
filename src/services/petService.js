@@ -19,3 +19,5 @@ exports.adComment = async (petId, userId, comment)=> {
 
     await pet.save();
 }
+
+exports.getUserPets = async (userId)=> Photo.find({owner:userId}).populate('owner').lean();
